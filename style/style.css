@@ -1,6 +1,28 @@
+/*header.php div */
 #header{
 	float : right;
 }
+/*all white color text*/
+.word-white{
+
+}
+/*unpar logo in header.php*/
+#logo-unpar{
+
+}
+/*sidebar.php div*/
+#sideDiv{
+
+}
+/*profile image in sidebar.php*/
+#profile-img{
+
+}
+/*icon sidebar.php*/
+.icon{
+
+}
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
