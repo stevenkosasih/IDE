@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-  </head>
-    <body>
-      <div name="header" id="header">
-        <h3 class="word-white">Interactive Digital Learning Environment</h3>
-        <h4 class="word-white">Faculty of Information Technology and Science</h2>
-        <h5 class="word-white">Parahyangan Catholic University</h5>
-        <hr>
-        <img src="img/logo.png" id="logo-unpar">
-      </div>
-    </body>
-</html>
+<div style="background-color:#333333">
+    <div class="w3-text-white" style="width:80%; display:inline-block">
+        <h4 class="w3-panel">Interactive Digital Learning Environtment</h4>
+        <h5 class="w3-panel">Faculty of information Technology and Science</h5>
+        <h6 class="w3-panel">Parahyangan Catholic University</h6>
+        <hr style="display:block; margin-top:0.5em; margin-left:20px; height:5px; background-color:white;">
+    </div>
+    <img src="../../img/logo.png" style="height:10%; width:10%; padding:5px; padding-top:15px">
+</div>
