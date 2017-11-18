@@ -31,7 +31,7 @@
 			<div>
 				<h5>-Faculty of Information Technology and Science</h5>
 			</div>
-		</div>	
+		</div>
 		<div class="w3-container" style="margin-top:32.5%; padding-left:3%">
 			<button class="w3-button w3-gray w3-opacity-min" onclick="document.getElementById('logModal').style.display='block'">Login</button>
 			<div id="logModal" class="w3-modal">
@@ -42,7 +42,7 @@
 					</div>
 					<form class="w3-container" action="phpScript/login.php" method="POST">
 						<div class="w3-section">
-							<input class="w3-input w3-border-bottom w3-margin-bottom" type="text" placeholder="Username" name="username" required>
+							<input class="w3-input w3-border-bottom w3-margin-bottom" type="text" placeholder="Username" name="username" value='<?php if(isset($_COOKIE['username'])){echo $_COOKIE['username'];}?>' required >
 							<input class="w3-input w3-border-bottom" type="password" placeholder="Password" name="password" required>
 							<button class="w3-button w3-black" style="margin-top:10px" type="submit">Login</button>
 						</div>
@@ -54,11 +54,11 @@
 			</div>
 		</div>
 		<div class="w3-text-white w3-bottom w3-padding">
-			<p>&copy Developed by Maria Veronica Claudia Muljana, S.T.</p>
+			<p> &copy Developed by Maria Veronica Claudia Muljana, S.T.</p>
 		</div>
 		<script>
 			var modal = document.getElementById('logModal');
-			
+
 			window.onclick = function(event) {
 				if (event.target == modal) {
 					modal.style.display = "none";
