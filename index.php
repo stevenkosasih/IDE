@@ -2,17 +2,17 @@
 
 <html>
 <?php
-include_once("C:/xampp/htdocs/IDE/layout/style.php");
+include_once("layout/style.php");
 
-include_once("C:/xampp/htdocs/IDE/phpScript/connection.php");
+include_once("phpScript/connection.php");
 ?>
 <head>
 	<title>IDE</title>
 </head>
 <body>
-	<div name="header" id="header"> 
+	<div name="header" id="header">
 		<button name="aboutUs">About us</button>
-		<button name="Contact Us">Contact US</button>	
+		<button name="Contact Us">Contact US</button>
 		<button name="Help">Help</button>
 	</div>
 	<div name="bodyIDE" id="bodyIDE">
@@ -27,14 +27,14 @@ include_once("C:/xampp/htdocs/IDE/phpScript/connection.php");
 			<div class="modal-content">
 				<span class="close">&times;</span>
 				<h2>Login</h2>
-				<form action="" method="POST">
+				<form action="phpScript/login.php" method="POST">
 					<input type="text" class="input" placeholder="Username" name="user">
 					<input type="password" class="input" placeholder="Password" name="pass">
-					<input type="submit" class="word-white" value="LOGIN">
+					<input type="submit" class="word-white" value="LOGIN" name="submit">
 					<a href="#">Forget password</a>
 					or
 					<a href="#">forget username</a>
-				</form>	
+				</form>
 			</div>
 
 		</div>
@@ -51,7 +51,7 @@ var btn = document.getElementById("modal-login-btn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
+// When the user clicks the button, open the modal
 function displayModal(){
 	modal.style.display="block";
 }

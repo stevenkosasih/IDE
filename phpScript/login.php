@@ -1,32 +1,59 @@
 <?php
-	include("connection.php");
-	if(isset($_GET["submit"])){
-		$user=$_GET["user"];
-		$pass=$_GET["pass"];
-		if(isset($user)&&$user!=""){
-			if($conn->query("SELECT name FROM users WHERE name='$user'")){
-				if($conn->query("SELECT pass FROM users WHERE pass='$pass'")){
-					if($result=$conn->query("SELECT name FROM usergroups INNER JOIN usergroups on usergroups.ID_UG=users.ID_UG")){
-						if($row=$result->fetch_array()){
-							session_start();
-							$_SESSION['name']=$name;
-							$res=$conn->query("SELECT userID FROM users WHERE name='$user',pass='$pass' ");
-							$row2=$res->fetch_array();
-							$_SESSION['userID']=$row["userID"];
-							if($row["name"]=="lecturer"){
-								header("C:/xampp/htdocs/IDE/pages/lecturer/lct.php");
-							}elseif($row["name"]=="student"){
-									header("C:/xampp/htdocs/IDE/pages/student/std.php");
-								}
+require "connection.php";
+if(isset($_POST["submit"])){
+	$user=$_POST["user"];
+	$pass=$_POST["pass"];
+
+	if(isset($user)&&$user!=""){
+		$sql="SELECT users.ID_U as id, users.username as username,
+		users.pass as pass, users.userID as userid,
+		users.name as name, usergroups.name as position
+		FROM users JOIN usergroups
+		ON users.ID_UG=usergroups.ID_UG
+		WHERE users.username='$user'";
+
+
+		//coba data dari $sql apakah connect tidak berdasarkan username
+
+		if($result=$conn->query($sql)){
+
+			if($row=$result->fetch_array()){
+				echo "success 1";
+				if(isset($pass)&&$pass!=""){
+					echo "scuces 2";
+					if($pass==$row["pass"]){
+						echo "suscee 3";
+						require "startSession.php";
+						$_SESSION['username']=$row["username"];
+						$_SESSION['userid']=$row["userid"];
+						if($row["position"]=="lecturer"){
+							echo $row["position"];
+							if(header("Location:/IDE/pages/lecturer/lct.php")){
+								echo "sucess 5";
+							}else{
+								echo "total failed";
 							}
+						}elseif($row["position"]=="student"){
+							header("/IDE/pages/student/std.php");
+						}
+
 					}
-				}else{
-					echo "WRONG PASSWORD";
 				}
-			}else{
-				echo "WRONG USERNAME";
 			}
 
+			//cek password
+
+		}else{
+			echo "password is wrong";
 		}
+	}else{
+		echo "username is wrong";
 	}
+
+
+}else{
+	echo "no life";
+}
+
+
 ?>

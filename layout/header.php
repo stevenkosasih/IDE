@@ -8,6 +8,7 @@
         <h4 class="word-white">Faculty of Information Technology and Science</h2>
         <h5 class="word-white">Parahyangan Catholic University</h5>
         <hr>
+
         <img src="img/logo.png" id="logo-unpar">
       </div>
     </body>
