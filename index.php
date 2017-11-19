@@ -44,7 +44,7 @@
 						<div class="w3-section">
 							<input class="w3-input w3-border-bottom w3-margin-bottom" type="text" placeholder="Username" name="username" value='<?php if(isset($_COOKIE['username'])){echo $_COOKIE['username'];}?>' required >
 							<input class="w3-input w3-border-bottom" type="password" placeholder="Password" name="password" required>
-							<button class="w3-button w3-black" style="margin-top:10px" type="submit">Login</button>
+							<input type="submit" class="w3-button w3-black" style="margin-top:10px" value="login" name="submit">
 						</div>
 						<div>
 							<span class="w3-left w3-padding w3-hide-small"><a href="#">Forgot password</a> or <a href="#">Forgot username</a>?</span>

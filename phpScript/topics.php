@@ -23,10 +23,10 @@ if($_SESSION['role']=="lecturer"){
 
         <tr>
           <!--munculin topic masih belum filenya-->
-<i class="fa fa-newspaper-o" aria-hidden="true"></i>
+          <i class="fa fa-newspaper-o" aria-hidden="true"></i>
           <?php echo $row[$i];?>
           <!--munculin button modal add Activity-->
-          <button name="addActivity">activity</button>
+          <button name="addActivity">Add activity</button>
           <!-- The Modal -->
           <div id="myModal" class="modal">
 
@@ -59,21 +59,21 @@ if($_SESSION['role']=="lecturer"){
 </script>
 <?php
 }else{ ?>
-<table>
-<td>
-<?php
-  for ($i=0; $i<num_row($row) ; $i++) {
-    ?>
-    <tr>
-<i class="fa fa-newspaper-o" aria-hidden="true"></i>
-<?php echo $row[$i]; ?>
+  <table>
+    <td>
+      <?php
+      for ($i=0; $i<num_row($row) ; $i++) {
+        ?>
+        <tr>
+          <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+          <?php echo $row[$i]; ?>
 
-</tr>
-    <?php
-  }?>
-</td>
-</table>
-<?php
+        </tr>
+        <?php
+      }?>
+    </td>
+  </table>
+  <?php
 }
 }
 ?>

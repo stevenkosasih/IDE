@@ -1,14 +1,14 @@
 <!-- include connection -->
 <?php
-include_once("/IDE/phpScript/connection.php");
+include("/IDE/phpScript/connection.php");
 ?>
-<!DOCTYPE html>
+
 <html>
 <head>
 	<title>IDE</title>
 	<!-- include style -->
 	<?php
-	include_once("/IDE/layout/style.php");
+	include("/IDE/layout/style.php");
 	?>
 </head>
 
@@ -16,13 +16,13 @@ include_once("/IDE/phpScript/connection.php");
 	<?php $myCourses = false ?>
 	<!-- include header -->
 	<?php
-	include_once("/IDE/layout/header.php");
+	include("../IDE/layout/header.php");
 	?>
 	<div class="w3-main">
 		<!-- include sidebar -->
 		<?php
-		include_once("/IDE/layout/sidebar.php");
-		include_once("IDE/phpScript/courses.php");
+		include("../IDE/layout/sidebar.php");
+		include("../IDE/phpScript/courses.php");
 		?>
 	</div>
 </body>

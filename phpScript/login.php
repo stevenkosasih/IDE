@@ -1,45 +1,55 @@
 <?php
-include('connection.php');
+include ("connection.php");
+if(isset($_POST["submit"])){
 
-if (empty($_POST['username']) || empty($_POST['password'])) {
-	header("Location: ../index.php");
-}
-else{
-	$username = $_POST['username'];
-	$password = $_POST['password'];
-	$sql = "SELECT username FROM users WHERE username = '$username'";
-	$result = $mysqli->query($sql);
-	if($result && $result->num_rows > 0){
-		$sql = "SELECT username, pass FROM users WHERE username = '$username' AND pass= '$password'";
-		$result = $mysqli->query($sql);
-		if($result && $result->num_rows > 0){
-			$sql = "SELECT usergroups.name as name, users.userID as userid, users.ID_U as idU FROM users JOIN usergroups WHERE username = '$username' AND pass= '$password' ON users.ID_UG = usergroups.ID_UG";
-			$result = $mysqli->query($sql);
-			if($result && $result->num_rows > 0){
-				include("sessionStart.php");
+	$user=$_POST["username"];
+	$pass=$_POST["password"];
 
-				$row = $result->fetch_array();
-				$role = $row['name'];
-				$_SESSION['user']=$row['username'];
-				$_SESSION['role']=$role;
-				$_SESSION['userid']=$row['userid'];
-				$_SESSION['idU']=$row['idU'];
+	if(isset($user)&&$user!=""){
+		$sql="SELECT users.ID_U as id, users.username as username,
+		users.pass as pass, users.userID as userid,
+		users.name as name, usergroups.name as position
+		FROM users JOIN usergroups
+		ON users.ID_UG=usergroups.ID_UG
+		WHERE users.username='$user'";
 
-				setcookie('username',$cookie_value,time()+(86400*30),"index.php");
-				if($role == 'student'){
-					header("Location: ../pages/student/std.php");
-				}
-				else{
-					header("Location: ../pages/lecturer/lct.php");
+
+		//coba data dari $sql apakah connect tidak berdasarkan username
+
+		if($result=$conn->query($sql)){
+
+			if($row=$result->fetch_array()){
+
+				if(isset($pass)&&$pass!=""){
+
+					if($pass==$row["pass"]){
+
+						include_once("startSession.php");
+
+						$_SESSION['name']=$row["name"];
+						$_SESSION['userid']=$row["userid"];
+						$_SESSION['idU']=$row['id'];
+						$_SESSION['role']=$row["position"];
+						setcookie('username',$cookie_value,time()+(86400*30),"index.php");
+						if($row["position"]=="lecturer"){
+							echo $row["position"];
+							if(header("Location:/IDE/pages/lecturer/lct.php")){
+								echo "sucess 5";
+							}else{
+								echo "total failed";
+							}
+						}elseif($row["position"]=="student"){
+							header("Location:/IDE/pages/student/std.php");
+						}
+
+					}else{
+						echo "wrong password";
+					}
 				}
 			}
+		}else{
+			echo "wrong username";
 		}
-		else{
-			echo "WRONG PASSWORD";
-		}
-	}
-	else{
-		echo "WRONG USERNAME";
 	}
 }
 ?>
