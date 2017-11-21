@@ -5,7 +5,7 @@ include_once("sessionStart.php");
 include("courses.php");
 //get topic
 $sql="SELECT topic FROM activities JOIN courses
-ON activities.ID_C=courses.ID_C WHERE courses.code='$_SESSION['courseCode']'";
+ON activities.ID_C=courses.ID_C WHERE courses.code='$_SESSION['code']'";
 $result=$conn->query($sql);
 $row=mysqli_fetch_row($result);
 //get asssigment and file
@@ -23,7 +23,7 @@ if($_SESSION['role']=="lecturer"){
 
         <tr>
           <!--munculin topic masih belum filenya-->
-<i class="fa fa-newspaper-o" aria-hidden="true"></i>
+          <i class="fa fa-newspaper-o" aria-hidden="true"></i>
           <?php echo $row[$i];?>
           <!--munculin button modal add Activity-->
           <button name="addActivity">activity</button>
@@ -59,21 +59,21 @@ if($_SESSION['role']=="lecturer"){
 </script>
 <?php
 }else{ ?>
-<table>
-<td>
-<?php
-  for ($i=0; $i<num_row($row) ; $i++) {
-    ?>
-    <tr>
-<i class="fa fa-newspaper-o" aria-hidden="true"></i>
-<?php echo $row[$i]; ?>
+  <table>
+    <td>
+      <?php
+      for ($i=0; $i<num_row($row) ; $i++) {
+        ?>
+        <tr>
+          <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+          <?php echo $row[$i]; ?>
 
-</tr>
-    <?php
-  }?>
-</td>
-</table>
-<?php
+        </tr>
+        <?php
+      }?>
+    </td>
+  </table>
+  <?php
 }
 }
 ?>
