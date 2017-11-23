@@ -5,7 +5,7 @@ include_once("sessionStart.php");
 include("courses.php");
 //get topic
 $sql="SELECT topic FROM activities JOIN courses
-ON activities.ID_C=courses.ID_C WHERE courses.code='$_SESSION['courseCode']'";
+ON activities.ID_C=courses.ID_C WHERE courses.code='$_SESSION['code']'";
 $result=$conn->query($sql);
 $row=mysqli_fetch_row($result);
 //get asssigment and file
