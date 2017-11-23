@@ -22,7 +22,7 @@ include("/IDE/phpScript/connection.php");
 		<!-- include sidebar -->
 		<?php
 		include("../IDE/layout/sidebar.php");
-		include("../IDE/phpScript/courses.php");
+		include("course.php");
 		?>
 	</div>
 </body>

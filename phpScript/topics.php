@@ -1,11 +1,13 @@
 <?php
 // tampilan belum jelas
 include_once("connection.php");
-include_once("sessionStart.php");
+
 include("courses.php");
 //get topic
+
+$code=$_SESSION['code'];
 $sql="SELECT topic FROM activities JOIN courses
-ON activities.ID_C=courses.ID_C WHERE courses.code='$_SESSION['courseCode']'";
+ON activities.ID_C=courses.ID_C WHERE courses.code='$code' ";
 $result=$conn->query($sql);
 $row=mysqli_fetch_row($result);
 //get asssigment and file
@@ -17,14 +19,14 @@ if($_SESSION['role']=="lecturer"){
   ?><table>
     <td>
       <?php
-
-      for ($i=0; $i<num_row($row) ; $i++) {
+        $numrow=mysqli_num_rows($result);
+      for ($i=0; $i<$numrow ; $i++) {
         ?>
 
         <tr>
           <!--munculin topic masih belum filenya-->
           <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-          <?php echo $row[$i];?>
+          <?php echo "topic ".$row[$i];?>
           <!--munculin button modal add Activity-->
           <button name="addActivity">Add activity</button>
           <!-- The Modal -->
@@ -35,9 +37,9 @@ if($_SESSION['role']=="lecturer"){
               <span class="close">&times;</span>
               <h2><b>Select Activity</b></h2>
               <form action="addingActivity.php" method="GET">
-                <input type="radio" name="asssigment"><i class="fa fa-file-o" aria-hidden="true"></i>Assigment
+                <input type="radio" name="assignment"><i class="fa fa-file-o" aria-hidden="true"></i>Assigment
                 <input type="radio" name="file"><i class="fa fa-file-text-o" aria-hidden="true"></i>File
-                <input type="submit" name="submit" value="Add">
+                <input type="submit" name="addActivity" value="Add">
               </form>
             </div>
 
@@ -75,5 +77,5 @@ if($_SESSION['role']=="lecturer"){
   </table>
   <?php
 }
-}
+
 ?>

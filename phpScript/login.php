@@ -24,20 +24,19 @@ if(isset($_POST["submit"])){
 
 					if($pass==$row["pass"]){
 
-						include_once("startSession.php");
+						include("sessionStart.php");
 
-						$_SESSION['name']=$row["name"];
-						$_SESSION['userid']=$row["userid"];
-						$_SESSION['idU']=$row['id'];
-						$_SESSION['role']=$row["position"];
+						$_SESSION["name"]=$row["name"];
+						$_SESSION["userid"]=$row["userid"];
+						$_SESSION["idU"]=$row['id'];
+						$_SESSION["role"]=$row["position"];
+
+						$cookie_value=$row['username'];
 						setcookie('username',$cookie_value,time()+(86400*30),"index.php");
 						if($row["position"]=="lecturer"){
-							echo $row["position"];
-							if(header("Location:/IDE/pages/lecturer/lct.php")){
-								echo "sucess 5";
-							}else{
-								echo "total failed";
-							}
+							header("Location:/IDE/pages/lecturer/lct.php");
+							
+
 						}elseif($row["position"]=="student"){
 							header("Location:/IDE/pages/student/std.php");
 						}
