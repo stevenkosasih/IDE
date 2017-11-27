@@ -1,7 +1,4 @@
-
-
 <!DOCTYPE html>
-
 <!-- include connection -->
 <?php
 include("C:/xampp/htdocs/IDE/phpScript/connection.php");?>
