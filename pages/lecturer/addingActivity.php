@@ -27,12 +27,12 @@ if(isset($_POST["addActivity"])){
     <fieldset>
       <legend><button name="general" data-toggle="collapse" data-target="generalDiv">General</button></legend>
       <div name="generalDiv">
-        Name <input type="text" name="courseName"><br>
+        Name <input type="text" name="courseTitle"><br>
         Description <textarea name="courseDescription" form="courseForm">
         </div>
       </fieldset>
       <?php if($activityType!=""){
-        echo "<fieldset>s
+        echo "<fieldset>
         <legend><button name="availability" data-toggle="collapse" data-target="availDiv">Availability</button></legend>
         <div name="contentDiv">
         Allow submission from <!--logo fa fa tanda tanya--> <input type="time" name="fromDate" placeholder="mm/dd/yyyy"><input type="checkbox" name="enableFrom"><br>
