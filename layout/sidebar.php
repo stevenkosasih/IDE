@@ -14,7 +14,7 @@
 	<div class="w3-padding-left">
 		<table style="margin-left:20px">
 		<tr>
-			<td style="width:50px"><a href="<?php if($_SESSION['role']=="lecturer"){echo "C:/xampp/htdocs/IDE/pages/lct.php; "}else {echo "C:/xampp/htdocs/IDE/pages/std.php"}?>" style="text-decoration: none"><i  class = "fa fa-home w3-padding" style="font-size:22px;"></i></td>
+			<td style="width:50px"><a href="<?php if($_SESSION['role']=="lecturer"){echo "C:/xampp/htdocs/IDE/pages/lct.php ";}else {echo "C:/xampp/htdocs/IDE/pages/std.php";}?>" style="text-decoration: none"><i  class = "fa fa-home w3-padding" style="font-size:22px;"></i></td>
 			<td><text style="font-size:18px0px;">HOME</text></a></td>
 		</tr>
 		<tr>
