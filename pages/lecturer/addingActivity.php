@@ -3,14 +3,14 @@ include("../../phpScript/connection.php");
 
 if(isset($_POST["addActivity"])){
   $activityType="";
-  $activityType=$_POST['radio'];
+  $activityType=$_GET['radio'];
 }
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<?php 
+	<?php
 		include("../../layout/style.php");
 	?>
 </head>
@@ -53,13 +53,13 @@ if(isset($_POST["addActivity"])){
 			var x = document.getElementById('contentDiv');
 			if (x.className.indexOf("w3-hide") == -1) {
 				x.className += " w3-hide";
-			} else { 
+			} else {
 				x.className = x.className.replace(" w3-show", "");
 			}
 			var x = document.getElementById('generalDiv');
 			if (x.className.indexOf("w3-hide") == -1) {
 				x.className += " w3-hide";
-			} else { 
+			} else {
 				x.className = x.className.replace(" w3-show", "");
 			}
 			return false;
