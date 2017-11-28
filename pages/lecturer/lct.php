@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <!-- include connection -->
 <?php
-include("C:/xampp/htdocs/IDE/phpScript/connection.php");?>
+	include("../../phpScript/connection.php");
+	include("../../phpScript/sessionStart.php");
+?>
 
 <html>
 <head>
 	<title>IDE</title>
 	<!-- include style -->
 	<?php
-	include("C:/xampp/htdocs/IDE/layout/style.php");
+	include("../../layout/style.php");
 	?>
 </head>
 
@@ -16,14 +18,14 @@ include("C:/xampp/htdocs/IDE/phpScript/connection.php");?>
 	<?php $myCourses = false ?>
 	<!-- include header -->
 	<?php
-	include("C:/xampp/htdocs/IDE/layout/header.php");
+	include("../../layout/header.php");
 	?>
 	<div class="w3-main">
 		<!-- include sidebar -->
 		<?php
-		include("C:/xampp/htdocs/IDE/layout/sidebar.php");
+		include("../../layout/sidebar.php");
 		include("course.php");
-		include("C:/xampp/htdocs/IDE/phpScript/topics.php");
+		include("../../phpScript/topics.php");
 		?>
 	</div>
 </body>

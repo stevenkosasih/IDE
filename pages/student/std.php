@@ -1,6 +1,7 @@
 <!-- include connection -->
 <?php
-include("/IDE/phpScript/connection.php");
+	include("../../phpScript/connection.php");
+	include("../../phpScript/sessionStart.php");
 ?>
 
 <html>
@@ -8,7 +9,7 @@ include("/IDE/phpScript/connection.php");
 	<title>IDE</title>
 	<!-- include style -->
 	<?php
-	include("/IDE/layout/style.php");
+	include("../../layout/style.php");
 	?>
 </head>
 
@@ -16,14 +17,14 @@ include("/IDE/phpScript/connection.php");
 	<?php $myCourses = false ?>
 	<!-- include header -->
 	<?php
-	include("../IDE/layout/header.php");
+	include("../../layout/header.php");
 	?>
 	<div class="w3-main">
 		<!-- include sidebar -->
 		<?php
-		include("../IDE/layout/sidebar.php");
+		include("../../layout/sidebar.php");
 		include("course.php");
-		include("C:/xampp/htdocs/IDE/phpScript/topics.php")
+		include("../../phpScript/topics.php");
 		?>
 	</div>
 </body>
