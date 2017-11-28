@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
 	if($activityType=="assignment"){
 		$target_dir="/upload/assigment/".$coursecode;
 		if(!file_exist($target_dir)){
-		if(mkdir($target_dir)){
+		if(mkdir($target_dir,0777,true)){
 			echo "success creating".$target_dir;
 		}else{
 			echo "fail creating".$target_dir;
@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
 	}else{
 		$target_dir="/upload/file/".$coursecode;
 		if(!file_exist($target_dir)){
-		if(mkdir($target_dir)){
+		if(mkdir($target_dir,0777,true)){
 			echo "success creating ".$target_dir;
 		}else{
 			echo "fail creating".$target_dir;

@@ -42,7 +42,7 @@
 					</div>
 					<form class="w3-container" action="phpScript/login.php" method="POST">
 						<div class="w3-section">
-							<input class="w3-input w3-border-bottom w3-margin-bottom" type="text" placeholder="Username" name="username" value='<?php if(isset($_COOKIE['username'])){echo $_COOKIE['username'];}?>' required >
+							<input class="w3-input w3-border-bottom w3-margin-bottom" type="text" placeholder="Username" name="username" value='<?php if(isset($_COOKIE['cookieuname'])){echo $_COOKIE['cookieuname'];}?>' required >
 							<input class="w3-input w3-border-bottom" type="password" placeholder="Password" name="password" required>
 							<input type="submit" class="w3-button w3-black" style="margin-top:10px" value="login" name="submit">
 						</div>

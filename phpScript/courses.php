@@ -1,6 +1,6 @@
 <?php
 include("connection.php");
-include("sessionStart.php");
+//include("sessionStart.php");
 
 $id = $_SESSION['id'];
 $sql = "SELECT courses.code as courseCode,courses.course as courseName, courses.ID_C as id FROM courses JOIN enrollments ON courses.ID_C = enrollments.ID_C WHERE $id = enrollments.ID_U;";

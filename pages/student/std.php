@@ -23,6 +23,7 @@ include("/IDE/phpScript/connection.php");
 		<?php
 		include("../IDE/layout/sidebar.php");
 		include("course.php");
+		include("C:/xampp/htdocs/IDE/phpScript/topics.php")
 		?>
 	</div>
 </body>

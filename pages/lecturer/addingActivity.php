@@ -1,5 +1,5 @@
 <?php
-include("/IDE/phpScript/connection.php");
+include("C:/xampp/htdocs/IDE/phpScript/connection.php");
 
 if(isset($_POST["addActivity"])){
   $activityType="";
@@ -12,7 +12,7 @@ if(isset($_POST["addActivity"])){
 
 <html>
 <head>
-  <?php include("/IDE/layout/style.php");
+  <?php include("../../layout/style.php");
   ?>
 </head>
 <body>
@@ -28,7 +28,7 @@ if(isset($_POST["addActivity"])){
       <legend><button name="general" data-toggle="collapse" data-target="generalDiv">General</button></legend>
       <div name="generalDiv">
         Name <input type="text" name="courseTitle"><br>
-        Description <textarea name="courseDescription" form="courseForm">
+        Description <textarea name="courseDescription" form="courseForm"></textarea>
         </div>
       </fieldset>
       <?php if($activityType!=""){
