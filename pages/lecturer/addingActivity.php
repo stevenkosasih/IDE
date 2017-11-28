@@ -33,10 +33,10 @@ if(isset($_POST["addActivity"])){
       </fieldset>
       <?php if($activityType!=""){
         echo "<fieldset>
-        <legend><button name="availability" data-toggle="collapse" data-target="availDiv">Availability</button></legend>
-        <div name="contentDiv">
-        Allow submission from <!--logo fa fa tanda tanya--> <input type="time" name="fromDate" placeholder="mm/dd/yyyy"><input type="checkbox" name="enableFrom"><br>
-        Due date<!--logo fa fa tanda tanya--> <input type="time" name="dueDate" placeholder="mm/dd/yyyy"><input type="checkbox" name="enableDue"><br>
+        <legend><button name='availability' data-toggle='collapse' data-target='availDiv'>Availability</button></legend>
+        <div name='contentDiv'>
+        Allow submission from <input type='time' name='fromDate' placeholder='mm/dd/yyyy' <input type='checkbox' name='enableFrom'><br>
+        Due date <input type='time' name='dueDate' placeholder='mm/dd/yyyy'><input type='checkbox' name='enableDue'><br>
         </div>
         </fieldset> ";
       }
