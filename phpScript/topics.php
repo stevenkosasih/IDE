@@ -76,8 +76,7 @@ else{ ?>
 				<tr>
 					<tr>
 						<div style="margin-left:22%">
-							<i class="fa fa-newspaper-o" aria-hidden="true"></i>
-							<p name="topic" id="topic"><?php $topic=$row["topic"]; echo "topic ".$topic;?></p>
+							<p name="topic" id="topic"><i class="fa fa-newspaper-o" aria-hidden="true"></i><?php $topic=$row["topic"]; echo " Topic ".$topic;?></p>
 							<!-- munculin list file-->
 							<?php $sql2="SELECT title,fileDir FROM activities JOIN courses
 							ON activities.ID_C=courses.ID_C WHERE (courses.code='$code') AND (activities.topic='$topic') ";
@@ -102,6 +101,7 @@ else{ ?>
 										</div>
 										<form class="w3-container" action="submitAnswerStd.php" method="GET">
 											<div class="w3-section w3-margin">
+												<input class="w3-input w3-border-bottom" type="file" name="inputFile" required>
 												<input type="submit" class="w3-button w3-black" style="margin-top:10px" value="Add" name="submitAnswer">
 											</div>
 										</form>
