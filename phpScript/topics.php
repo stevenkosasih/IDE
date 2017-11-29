@@ -18,8 +18,7 @@ if($_SESSION['position']=="lecturer"){
 			<?php while ($row=$result->fetch_array()) { ?>
 				<tr>
 					<div style="margin-left:22%">
-						<i class="fa fa-newspaper-o" aria-hidden="true"></i>
-						<p name="topic" id="topic"><?php $topic=$row["topic"]; echo "topic ".$topic;?></p>
+						<p name="topic" id="topic"><i class="fa fa-newspaper-o" aria-hidden="true"></i><?php $topic=$row["topic"]; echo " Topic ".$topic;?></p>
 						<!-- munculin list file-->
 						<?php $sql2="SELECT title,fileDir FROM activities JOIN courses
 						ON activities.ID_C=courses.ID_C WHERE (courses.code='$code') AND (activities.topic='$topic') ";
@@ -35,22 +34,21 @@ if($_SESSION['position']=="lecturer"){
 							}
 						}
 						?>
-
-
-						<!--munculin button modal add Activity-->
-						<button name="addActivity">Add activity</button>
-						<!-- The Modal -->
-						<div id="myModal" class="modal">
-
-							<!-- Modal content -->
-							<div class="w3-modal">
-								<span class="close">&times;</span>
-								<h2><b>Select Activity</b></h2>
-								<form action="addingActivity.php" method="GET">
-									<input type="radio" name="assignment"><i class="fa fa-file-o" aria-hidden="true"></i>Assigment
-									<input type="radio" name="file"><i class="fa fa-file-text-o" aria-hidden="true"></i>File
-									<input type="submit" name="addActivity" value="Add">
-								</form>
+						<button class="w3-button w3-black" onclick="document.getElementById('actModal').style.display='block'">Add Activity</button>
+							<div id="actModal" class="w3-modal">
+								<div class="w3-modal-content w3-card-4 w3-animate-zoom w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border-black" style="max-width:35%">
+									<div class="w3-center"><br>
+										<span onclick="document.getElementById('actModal').style.display='none'" class="w3-button w3-x w3-hover-black w3-display-topright" title="Close Modal">&times;</span>
+										<p class="w3-xlarge" style="float:left; margin:0px; margin-left:10px;">Select Activity</p>
+									</div>
+									<form class="w3-container" action="addingActivity.php" method="GET">
+										<div class="w3-section w3-margin">
+											<input class="w3-border-bottom w3-margin-bottom" type="radio" name="assignment"><i class="w3-padding fa fa-file-o" aria-hidden="true"></i>Assigment<br>
+											<input class="w3-border-bottom" type="radio" name="file"><i class="w3-padding fa fa-file-o" aria-hidden="true"></i>File<br>
+											<input type="submit" class="w3-button w3-black" style="margin-top:10px" value="Add" name="addActivity">
+										</div>
+									</form>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -95,23 +93,20 @@ else{ ?>
 								}
 							}
 							?>
-
-
-							<!--munculin button modal add Activity-->
-							<button name="submitAnswer">Submit Answer</button>
-							<!-- The Modal -->
-							<div id="myModal" class="modal">
-
-								<!-- Modal content -->
-								<div class="w3-modal">
-									<span class="close">&times;</span>
-									<h2><b>S</b></h2>
-									<form action="submitAnswerStd.php" method="GET">
-
-										<input type="submit" name="submitAnswer" value="Add">
-									</form>
+							<button class="w3-button w3-black" onclick="document.getElementById('submitModal').style.display='block'">Submit Answer</button>
+								<div id="submitModal" class="w3-modal">
+									<div class="w3-modal-content w3-card-4 w3-animate-zoom w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border-black" style="max-width:35%">
+										<div class="w3-center"><br>
+											<span onclick="document.getElementById('submitModal').style.display='none'" class="w3-button w3-x w3-hover-black w3-display-topright" title="Close Modal">&times;</span>
+											<p class="w3-xlarge" style="float:left; margin:0px; margin-left:10px;">Submit</p>
+										</div>
+										<form class="w3-container" action="submitAnswerStd.php" method="GET">
+											<div class="w3-section w3-margin">
+												<input type="submit" class="w3-button w3-black" style="margin-top:10px" value="Add" name="submitAnswer">
+											</div>
+										</form>
+									</div>
 								</div>
-							</div>
 						</div>
 					</tr>
 					<?php
@@ -127,10 +122,6 @@ else{ ?>
 			}
 		}
 	</script>
-
-
-
-
 				</tr>
 				<?php
 			}?>
