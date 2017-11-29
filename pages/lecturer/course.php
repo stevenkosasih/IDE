@@ -3,4 +3,3 @@
 
 
 ?>
-<a href="course.php"><?php  echo $_SESSION['course'] ;?></a>

@@ -19,6 +19,7 @@ if(isset($_SESSION['id'])){
       <div class="w3-panel w3-card-2" style="margin-left:20%"><a href="<?php echo "course.php?id=".$courseID."&courseTitle=".$course ?>" style = "text-decoration: none;"><p><?php echo "$courseCode"." / "."$course"?></p></a></div>
 <?php
   $_SESSION['course']=$courseCode."/".$course;
+	$_SESSION['code']=$courseCode;
     }
   }
 }
