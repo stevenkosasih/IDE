@@ -20,6 +20,7 @@ else{
 				$_SESSION['id'] = $row["id"];
 				$_SESSION['username'] = $row["username"];
 				$cookieuname = $_SESSION['username'];
+				$_SESSION["isCourse"]=true;
 				$_SESSION['pass'] = $row["pass"];
 				$_SESSION['userid'] = $row["userid"];
 				$_SESSION['name'] = $row["name"];
