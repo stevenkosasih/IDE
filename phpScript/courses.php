@@ -20,6 +20,7 @@ if(isset($_SESSION['id'])){
 <?php
   $_SESSION['course']=$courseCode."/".$course;
 	$_SESSION['code']=$courseCode;
+	$_SESSION['id_course']=$id;
     }
   }
 }

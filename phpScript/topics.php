@@ -18,6 +18,7 @@ if($_SESSION['position']=="lecturer"){
 			<?php while ($row=$result->fetch_array()) { ?>
 				<tr>
 					<div style="margin-left:22%">
+						<div class="w3-panel w3-card-2" style="width:99%">
 						<p name="topic" id="topic"><i class="fa fa-newspaper-o" aria-hidden="true"></i><?php $topic=$row["topic"]; echo " Topic ".$topic;?></p>
 						<!-- munculin list file-->
 						<?php $sql2="SELECT title,fileDir FROM activities JOIN courses
@@ -34,7 +35,7 @@ if($_SESSION['position']=="lecturer"){
 							}
 						}
 						?>
-						<button class="w3-button w3-black" onclick="document.getElementById('actModal').style.display='block'">Add Activity</button>
+						<button class="w3-button w3-black w3-margin" onclick="document.getElementById('actModal').style.display='block'">Add Activity</button>
 							<div id="actModal" class="w3-modal">
 								<div class="w3-modal-content w3-card-4 w3-animate-zoom w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border-black" style="max-width:35%">
 									<div class="w3-center"><br>
@@ -50,6 +51,7 @@ if($_SESSION['position']=="lecturer"){
 									</form>
 								</div>
 							</div>
+						</div>
 						</div>
 					</div>
 				</tr>
@@ -76,6 +78,7 @@ else{ ?>
 				<tr>
 					<tr>
 						<div style="margin-left:22%">
+							<div class="w3-panel w3-card-2" style="width:99%">
 							<p name="topic" id="topic"><i class="fa fa-newspaper-o" aria-hidden="true"></i><?php $topic=$row["topic"]; echo " Topic ".$topic;?></p>
 							<!-- munculin list file-->
 							<?php $sql2="SELECT title,fileDir FROM activities JOIN courses
@@ -92,7 +95,7 @@ else{ ?>
 								}
 							}
 							?>
-							<button class="w3-button w3-black" onclick="document.getElementById('submitModal').style.display='block'">Submit Answer</button>
+							<button class="w3-button w3-black w3-margin" onclick="document.getElementById('submitModal').style.display='block'">Submit Answer</button>
 								<div id="submitModal" class="w3-modal">
 									<div class="w3-modal-content w3-card-4 w3-animate-zoom w3-leftbar w3-rightbar w3-topbar w3-bottombar w3-border-black" style="max-width:35%">
 										<div class="w3-center"><br>
@@ -107,6 +110,7 @@ else{ ?>
 										</form>
 									</div>
 								</div>
+							</div>
 						</div>
 					</tr>
 					<?php
