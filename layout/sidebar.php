@@ -6,7 +6,7 @@
 		<h5 class="w3-panel">You are logged in as</h5>
 		<p class="w3-panel"><b><?php echo $_SESSION['userid'];?></b></p>
 		<p class="w3-panel"><b><?php echo $_SESSION['name']?></b></p>
-		<!--<p class="w3-panel"><b><?php //echo print_r($_SESSION)?></b></p>-->
+		<p class="w3-panel"><b><?php echo print_r($_SESSION)?></b></p>
 		<hr style="display:block; margin:0px; margin-left:10px; margin-right:10px; height:5px; background-color:#a6a6a6;">
 	</div>
 	<div style="margin-left:20px">

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!-- include connection -->
 <?php
-	include("../../phpScript/connection.php");
-	include("../../phpScript/sessionStart.php");
+include("../../phpScript/connection.php");
+include("../../phpScript/sessionStart.php");
 ?>
 
 <html>
@@ -24,8 +24,14 @@
 		<!-- include sidebar -->
 		<?php
 		include("../../layout/sidebar.php");
-		include("course.php");
-		include("../../phpScript/topics.php");
+		if($_SESSION["isCourse"]==true){
+			include("course.php");
+			include("../../phpScript/topics.php");
+
+		}else{
+			include("addingActivity.php");
+		}
+
 		?>
 	</div>
 </body>
